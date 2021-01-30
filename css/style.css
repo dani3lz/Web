@@ -3,9 +3,69 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 	font-family: 'Acme', sans-serif;
 }
 
+body {
+	background: #12222d;
+	height: 1000px;
+	overflow-x: hidden;
+}
+
+.wrapper {
+	position: relative;
+	transition: 0.5s;
+	left: 0;
+}
+
+.wrapper.active
+{
+	left: -400px;
+}
+/* Header */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 9999;
+	transition: 0.5s;
+}
+
+header .logo {
+	color: #fff;
+	text-decoration: none;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+header.scrollfix {
+	padding: 20px 100px;
+	background: #162c3b;
+}
+
+header .buttonm {
+	position: relative;
+	width: 36px;
+	height: 28px;
+	background: url(../img/menuopen.png);
+	background-size: cover;
+	cursor: pointer;
+}
+
+header .buttonm.active {
+	background: url(../img/menuclose.png);
+	background-size: cover;
+}
+/*	Banner */
 .banner {
 	position: relative;
 	width: 100%;
@@ -13,7 +73,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #3475ca;
+	background: #303030;
 }
 
 .banner img {
@@ -23,7 +83,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	opacity: 0.5;
+	opacity: 0.3;
 }
 
 .banner .content {
@@ -33,11 +93,69 @@
 }
 
 .banner .content h1 {
-	font-size: 120px;
+	font-size: 90px;
 	color: #fff;
 }
 
 .banner .content p {
-	font-size: 25px;
+	font-size: 22px;
 	color: #fff;
+}
+/* Menubar */
+.menubar {
+	position: fixed;
+	right: -400px;
+	top: 0;
+	width: 400px;
+	height: 100%;
+	background: #12222d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	transition: 0.5s;
+}
+
+.menubar.active {
+	right: 0;
+}
+
+.menubar ul {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.menubar ul li {
+	list-style: none;
+	margin: 10px 0;
+}
+
+.menubar ul li a {
+	color: #fff;
+	font-size: 40px;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.menubar ul li a:hover {
+	color: #3f8ffc;
+}
+
+.about {
+	background: #163317;
+}
+
+.about .container {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	color: #fff;
+}
+
+.about .container h3 {
+	font-size: 60px;
+}
+
+.about .container p {
+	font-size: 20px;
 }
