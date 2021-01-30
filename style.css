@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Acme', sans-serif;
+}
+
+.banner {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #3475ca;
+}
+
+.banner img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.5;
+}
+
+.banner .content {
+	position: relative;
+	max-width: 750px;
+	text-align: center;
+}
+
+.banner .content h1 {
+	font-size: 120px;
+	color: #fff;
+}
+
+.banner .content p {
+	font-size: 25px;
+	color: #fff;
+}
