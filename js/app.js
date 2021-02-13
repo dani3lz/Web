@@ -1,5 +1,5 @@
 $(document).ready(function(){
-// Menubar animation
+// Menubar
 var $togglefunction = function(){
  	$('.menubar').toggleClass('active');
 	$('.wrapper').toggleClass('active');
