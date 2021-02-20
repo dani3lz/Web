@@ -1,0 +1,242 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+* {
+     margin: 0;
+     padding: 0;
+     scroll-behavior: smooth;
+     box-sizing: border-box;
+     font-family: 'Acme', sans-serif;
+}
+
+body {
+     background: #1F1C2C; /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C); /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     overflow-x: hidden;
+}
+
+.wrapper {
+     position: relative;
+     transition: 0.5s;
+     left: 0;
+}
+
+     .wrapper.active {
+          left: -400px;
+     }
+
+/* Header */
+#header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     padding: 20px 100px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 9999;
+     transition: 0s;
+     height:82.85px;
+     background: #EB3349; /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #F45C43, #EB3349); /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+     #header .logo {
+          color: #fff;
+          text-decoration: none;
+          font-size: 30px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1px;
+     }
+
+          #header .logo a {
+               color: #fff;
+               text-decoration: none;
+               font-size: 30px;
+               text-transform: uppercase;
+               font-weight: 700;
+               letter-spacing: 1px;
+               font-family: 'Acme', sans-serif;
+          }
+
+     #header .menubar a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 25px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1px;
+          font-family: 'Acme', sans-serif;
+     }
+
+          #header .menubar a:hover {
+               color: yellow;
+               transition: 0.5s;
+          }
+
+     #header.scrollfix {
+          
+     }
+
+     #header .buttonm {
+          position: relative;
+          width: 36px;
+          height: 28px;
+          background: url(../img/menuopen.png);
+          background-size: cover;
+          cursor: pointer;
+     }
+
+          #header .buttonm.active {
+               background: url(../img/menuclose.png);
+               background-size: cover;
+          }
+
+/*	Banner */
+.banner {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: #1D5290;
+}
+
+     .banner img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.3;
+     }
+
+     .banner .content {
+          position: relative;
+          max-width: 750px;
+          text-align: center;
+     }
+
+          .banner .content h1 {
+               font-size: 90px;
+               color: #fff;
+          }
+
+          .banner .content p {
+               font-size: 22px;
+               color: #fff;
+          }
+
+/* Menubar */
+.menuright {
+     position: fixed;
+     right: -400px;
+     top: 0;
+     width: 400px;
+     height: 100%;
+     background: #000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 100;
+     transition: 0.5s;
+}
+
+     .menuright.active {
+          right: 0;
+     }
+
+     .menuright ul {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+     }
+
+          .menuright ul li {
+               list-style: none;
+               margin: 10px 0;
+          }
+
+               .menuright ul li a {
+                    color: #fff;
+                    font-size: 40px;
+                    font-weight: 400;
+                    text-decoration: none;
+               }
+
+                    .menuright ul li a:hover {
+                         color: #3f8ffc;
+                    }
+/* About */
+.about {
+     background: #451111;
+}
+
+     .about .container {
+          padding-top: 80px;
+          padding-bottom: 80px;
+          color: #fff;
+
+     }
+
+          .about .container .book {
+          }
+
+
+          .about .container h3 {
+               font-size: 60px;
+          }
+
+          .about .container p {
+               font-size: 20px;
+          }
+
+/* Market */
+
+.market {
+     width: 94%;
+     height: auto;
+     margin-left: 3%;
+     margin-top: 120px;
+     margin-bottom: 100px;
+     border-radius: 25px;
+     box-shadow: 0px 0px 20px 1px #000;
+     background: #D3CCE3; /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3); /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+     .market .books {
+          width: 88%;
+          margin-left: 6%;
+          text-align: center;
+     }
+
+     .market .books h2 {
+          text-align: left;
+          color: #000;
+          border-bottom: 3px solid #000;
+          margin: 100px 50px 25px 50px;
+          width: 100%;
+     }
+     .market .books .book{
+          margin-bottom: 80px;
+     }
+
+     .market .book img {
+          top: 0;
+          left: 0;
+          width: auto;
+          height: 300px;
+          object-fit: cover;
+          border: 2px solid black;
+          border-radius: 25px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+     }
