@@ -240,3 +240,17 @@ body {
           margin-left: auto;
           margin-right: auto;
      }
+
+/* Register/Login */
+.danger {
+     color: red;
+}
+
+#header .user {
+     color: #fff;
+     text-decoration: none;
+     font-size: 25px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     font-family: 'Acme', sans-serif;
+}

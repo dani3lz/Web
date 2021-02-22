@@ -1,103 +1,118 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-     <title>Login</title>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/bootstrap/css/bootstrap.min.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/fonts/iconic/css/material-design-iconic-font.min.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/animate/animate.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/css-hamburgers/hamburgers.min.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/animsition/css/animsition.min.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/select2/select2.min.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/daterangepicker/daterangepicker.css">
-     <!--===============================================================================================-->
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/css/util.css">
-     <link rel="stylesheet" type="text/css" href="~/Content/Auth/css/main.css">
-     <!--===============================================================================================-->
-</head>
-<body>
+﻿@model eUseControl.Web.Models.UserLogin
 
-    <!-- <div id="header">
-          <div class="logo">BOOKShop</div>
-          <div class="menubar"><a href="/Home/Index">Home</a></div>
-          <div class="menubar"><a href="/Market/Main">Market</a></div>
-          <div class="menubar"><a href="/Auth/Register">Register</a></div>
-     </div>-->
+@{
+     ViewBag.Title = "Login";
+}
 
 
-     <div class="limiter">
-          <div class="container-login100">
-               <div class="wrap-login100">
-                    <form class="login100-form validate-form">
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
 
-                         <span class="login100-form-title p-b-34 p-t-27">
-                              Log in
-                         </span>
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+          <title>Login</title>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/bootstrap/css/bootstrap.min.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/fonts/iconic/css/material-design-iconic-font.min.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/animate/animate.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/css-hamburgers/hamburgers.min.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/animsition/css/animsition.min.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/select2/select2.min.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/vendor/daterangepicker/daterangepicker.css">
+          <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/css/util.css">
+          <link rel="stylesheet" type="text/css" href="~/Content/Auth/css/main.css">
+          <!--===============================================================================================-->
+     </head>
+     <body>
 
-                         <div class="wrap-input100 validate-input" data-validate="Enter username">
-                              <input class="input100" type="text" name="username" placeholder="Username">
-                              <span class="focus-input100" data-placeholder="&#xf207;"></span>
-                         </div>
+          <div id="header">
+               <div class="logo">BOOKShop</div>
+               <div class="menubar"><a href="/Home/Index">Home</a></div>
+               <div class="menubar"><a href="/Market/Books">Market</a></div>
+               <div class="menubar"><a href="/Auth/Register">Register</a></div>
+          </div>
 
-                         <div class="wrap-input100 validate-input" data-validate="Enter password">
-                              <input class="input100" type="password" name="pass" placeholder="Password">
-                              <span class="focus-input100" data-placeholder="&#xf191;"></span>
-                         </div>
 
-                         <div class="contact100-form-checkbox">
-                              <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                              <label class="label-checkbox100" for="ckb1">
-                                   Remember me
-                              </label>
-                         </div>
+          <div class="limiter">
+               <div class="container-login100">
+                    <div class="wrap-login100">
+                         <form class="login100-form validate-form">
 
-                         <div class="container-login100-form-btn">
-                              <button class="login100-form-btn">
+                              <span class="login100-form-title p-b-34 p-t-27">
                                    Login
-                              </button>
-                         </div>
+                              </span>
 
-                         <div class="text-center p-t-90">
-                              <a class="txt1" href="#">
-                                   Forgot Password?
-                              </a>
-                         </div>
-                    </form>
+                              <div class="wrap-input100 validate-input" data-validate="Enter username">
+                                   @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "input100", @placeholder = "Username" } })
+                                   <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                                   @Html.ValidationMessageFor(model => model.Username, "", new { @class = "danger" })
+                              </div>
+
+                              <div class="wrap-input100 validate-input" data-validate="Enter password">
+                                   @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "input100", @placeholder = "Username" } })
+                                   <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                                   @Html.ValidationMessageFor(model => model.Password, "", new { @class = "danger" })
+                              </div>
+
+                              <div class="contact100-form-checkbox">
+                                   <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                                   <label class="label-checkbox100" for="ckb1">
+                                        Remember me
+                                   </label>
+                              </div>
+
+                              <div class="container-login100-form-btn">
+                                   <button class="login100-form-btn">
+                                        Login
+                                   </button>
+                              </div>
+                              <label class="danger" style="font-size:20px;">@ViewBag.Notification</label>
+
+                              <div class="text-center p-t-90">
+                                   <a class="txt1" href="#">
+                                        Forgot Password?
+                                   </a>
+                              </div>
+                         </form>
+                    </div>
                </div>
           </div>
-     </div>
 
 
-     <div id="dropDownSelect1"></div>
+          <div id="dropDownSelect1"></div>
 
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/vendor/jquery/jquery-3.2.1.min.js"></script>
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/vendor/animsition/js/animsition.min.js"></script>
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/vendor/bootstrap/js/popper.js"></script>
-     <script src="~/Content/Auth/vendor/bootstrap/js/bootstrap.min.js"></script>
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/vendor/select2/select2.min.js"></script>
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/vendor/daterangepicker/moment.min.js"></script>
-     <script src="~/Content/Auth/vendor/daterangepicker/daterangepicker.js"></script>
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/vendor/countdowntime/countdowntime.js"></script>
-     <!--===============================================================================================-->
-     <script src="~/Content/Auth/js/main.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/vendor/jquery/jquery-3.2.1.min.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/vendor/animsition/js/animsition.min.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/vendor/bootstrap/js/popper.js"></script>
+          <script src="~/Content/Auth/vendor/bootstrap/js/bootstrap.min.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/vendor/select2/select2.min.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/vendor/daterangepicker/moment.min.js"></script>
+          <script src="~/Content/Auth/vendor/daterangepicker/daterangepicker.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/vendor/countdowntime/countdowntime.js"></script>
+          <!--===============================================================================================-->
+          <script src="~/Content/Auth/js/main.js"></script>
 
-</body>
+     </body>
 </html>
+}

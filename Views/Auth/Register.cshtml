@@ -1,59 +1,70 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Register</title>
-     <link href="~/Content/css/style.css" rel="stylesheet" />
+﻿@model eUseControl.Web.Models.UserRegistration
 
-     <!-- Font Icon -->
-     <link rel="stylesheet" href="~/Content/Register/fonts/material-icon/css/material-design-iconic-font.min.css">
+@{
+     ViewBag.Title = "Register";
+}
 
-     <!-- Main css -->
-     <link rel="stylesheet" href="~/Content/Register/css/style.css">
-</head>
-<body>
 
-     <div id="header">
-          <div class="logo">BOOKShop</div>
-          <div class="menubar"><a href="/Home/Index">Home</a></div>
-          <div class="menubar"><a href="/Market/Main">Market</a></div>
-          <div class="menubar"><a href="/Auth/Login">Login</a></div>
-     </div>
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
+     <!DOCTYPE html>
+     <html>
+     <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>BOOKShop</title>
+          <link href="~/Content/css/style.css" rel="stylesheet" />
+          <!-- Font Icon -->
+          <link rel="stylesheet" href="~/Content/Register/fonts/material-icon/css/material-design-iconic-font.min.css">
+          <!-- Main css -->
+          <link rel="stylesheet" href="~/Content/Register/css/style.css">
+     </head>
+     <body>
 
-     <div class="main">
+          <div id="header">
+               <div class="logo">BOOKShop</div>
+               <div class="menubar"><a href="/Home/Index">Home</a></div>
+               <div class="menubar"><a href="/Market/Books">Market</a></div>
+               <div class="menubar"><a href="/Auth/Login">Login</a></div>
+          </div>
 
-          <section class="signup">
-               <div class="container">
-                    <div class="signup-content">
-                         <form method="POST" id="signup-form" class="signup-form">
-                              <h2 class="form-title">Create account</h2>
-                              <div class="form-group">
-                                   <input type="text" class="form-input" name="name" id="name" placeholder="Your Name" />
-                              </div>
-                              <div class="form-group">
-                                   <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
-                              </div>
-                              <div class="form-group">
-                                   <input type="text" class="form-input" name="password" id="password" placeholder="Password" />
-                                   <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                              </div>
-                              <div class="form-group">
-                                   <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password" />
-                              </div>
-                              <div class="form-group">
-                                   <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />
-                              </div>
-                         </form>
+          <div class="main">
+
+               <section class="signup">
+                    <div class="container">
+                         <div class="signup-content">
+                              <form method="POST" id="signup-form" class="signup-form">
+                                   <h2 class="form-title">Create account</h2>
+                                   <div class="form-group">
+
+                                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-input", @id = "Txtname", @placeholder = "Username" } })
+                                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "danger" })
+                                   </div>
+                                   <div class="form-group">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-input", @id = "email", @placeholder = "Your Email" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "danger" })
+
+                                   </div>
+                                   <div class="form-group">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-input", @id = "password", @placeholder = "Password", @type = "password" } })
+                                        <span toggle="#password" class="zmdi zmdi-eye-off field-icon toggle-password"></span>
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "danger" })
+                                   </div>
+                                   <div class="form-group">
+                                        @Html.EditorFor(model => model.RePassword, new { htmlAttributes = new { @class = "form-input", @id = "re_password", @placeholder = "Repeat your password", @type = "password" } })
+                                        @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "danger" })
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />
+                                        <label class="danger" style="font-size:20px;">@ViewBag.Notification</label>
+                                   </div>
+                              </form>
+                         </div>
                     </div>
-               </div>
-          </section>
+               </section>
 
-     </div>
-
-
-     <script src="~/Content/Register/vendor/jquery/jquery.min.js"></script>
-     <script src="~/Content/Register/js/main.js"></script>
-</body>
+          </div>
+     </body>
 </html>
+}

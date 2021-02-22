@@ -12,8 +12,10 @@ namespace eUseControl.Web.Controllers
     public class MarketController : Controller
     {
           // GET: Market
-          public ActionResult Main()
+          public ActionResult Books()
           {
+               ViewBag.Notification = Session["Username"];
+
                var client = new MongoClient("mongodb://localhost:27017");
                var db = client.GetDatabase("BOOKShop");
                var books = db.GetCollection<BsonDocument>("Books");
