@@ -1,0 +1,202 @@
+﻿@model eUseControl.Web.Models.UserProfil
+
+@{
+     ViewBag.Title = "Profile";
+}
+
+
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
+
+     <!DOCTYPE html>
+     <head>
+          <title>Bootstrap Example</title>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+          <link href="~/Content/Profile/bootstrap.min.css" rel="stylesheet" />
+          <link rel="stylesheet" type="text/css" href="~/Content/css/style-profile.css">
+
+     </head>
+     <body>
+          <div class="wrapper">
+               <div class="container bootstrap snippet">
+                    <div class="row">
+                         <div class="col-sm-10"><h1>
+                         @if (Session["Username"] != null)
+                         {
+                              @Session["Username"].ToString()
+                         }
+                         </h1></div>
+                         <div class="col-sm-2"></div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-3">
+                              <!--left col-->
+                              <ul class="list-group">
+                                   <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                                   <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span>1</li>
+                                   <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span>3</li>
+                                   <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span>3</li>
+                                   <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span>7</li>
+                              </ul>
+
+                         </div><!--/col-3-->
+                         <div class="col-sm-9">
+                              <ul class="nav nav-tabs">
+                                   <li class="tab active" id="menuprofile"><a data-toggle="tab" href="#home">Home</a></li>
+                                   <li class="tab" id="menuprofile"><a data-toggle="tab" href="#general">General</a></li>
+                                   <li class="tab" id="menuprofile"><a data-toggle="tab" href="#security">Security</a></li>
+                              </ul>
+
+
+                              <div class="tab-content">
+                                   <div class="tab-pane active" id="home">
+
+
+                                   </div><!--/tab-pane-->
+
+                                   <div class="tab-pane" id="general">
+
+                                        <form class="form" action="#general" method="post" id="registrationForm">
+                                             <div class="form-group">
+
+                                                  <div class="col-xs-6">
+                                                       <label for="first_name">First name</label>
+
+                                                       @Html.EditorFor(model => model.First, new { htmlAttributes = new { @name = "first_name", @class = "form-control", @id = "first_name", @placeholder = "Enter your first name" } })
+                                                       @Html.ValidationMessageFor(model => model.First, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+
+                                                  <div class="col-xs-6">
+                                                       <label for="last_name">Last name</label>
+
+                                                       @Html.EditorFor(model => model.Last, new { htmlAttributes = new { @name = "last_name", @class = "form-control", @id = "last_name", @placeholder = "Enter your last name" } })
+                                                       @Html.ValidationMessageFor(model => model.Last, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+                                                  <div class="col-xs-6">
+                                                       <label for="mobile">Mobile</label>
+
+                                                       @Html.EditorFor(model => model.Telefonul, new { htmlAttributes = new { @name = "mobile", @class = "form-control", @id = "mobile", @placeholder = "Enter your mobile number" } })
+                                                       @Html.ValidationMessageFor(model => model.Telefonul, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+
+                                                  <div class="col-xs-6">
+                                                       <label for="location">Location</label>
+
+                                                       @Html.EditorFor(model => model.Adresa, new { htmlAttributes = new { @class = "form-control", @id = "location", @placeholder = "Enter your location" } })
+                                                       @Html.ValidationMessageFor(model => model.Adresa, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+                                                  <div class="col-xs-12">
+                                                       <br>
+                                                       <button class="btn btn-lg btn-success pull-right general" type="submit" name="button" value="general"><i class="glyphicon"></i>Save</button>
+                                                  </div>
+                                             </div>
+                                        </form>
+
+                                   </div><!--/tab-pane-->
+                                   <div class="tab-pane" id="security">
+
+                                        <form class="form" action="##" method="post" id="registrationForm">
+                                             <div class="form-group">
+
+                                                  <div class="col-xs-6">
+                                                       <label for="email">Email</label>
+
+                                                       @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @type = "email", @name = "email", @class = "form-control", @id = "email", @placeholder = "Enter your curent email" } })
+                                                       @Html.ValidationMessageFor(model => model.Email, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+
+                                                  <div class="col-xs-6">
+                                                       <label for="email">New Email</label>
+
+                                                       @Html.EditorFor(model => model.ReEmail, new { htmlAttributes = new { @type = "email", @name = "email", @class = "form-control", @id = "reemail", @placeholder = "Enter your new email" } })
+                                                       @Html.ValidationMessageFor(model => model.ReEmail, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+
+                                                  <div class="col-xs-12">
+                                                       <label for="password">Password</label>
+
+                                                       @Html.EditorFor(model => model.PasswordCurent, new { htmlAttributes = new { @type = "password", @class = "form-control", @id = "password", @placeholder = "Enter your curent password" } })
+                                                       @Html.ValidationMessageFor(model => model.PasswordCurent, "", new { @class = "danger" })
+                                                  </div>
+                                             </div>
+                                             <div class="form-group">
+                                                  <div class="col-xs-12">
+                                                       <br>
+                                                       <button class="btn btn-lg btn-success pull-right security1" type="submit" name="button" value="securitymail"><i class="glyphicon"></i>Save</button>
+                                                  </div>
+                                                  <label class="pull-right" style="font-size:15px; color:red;">@ViewBag.Notification</label>
+                                             </div>
+                                        </form>
+                                        <form class="form" action="###" method="post" id="registrationForm">
+                                             <div class="form-group">
+                                                  <div class="form-group">
+
+                                                       <div class="col-xs-12">
+                                                            <label for="password">Curent Password</label>
+
+                                                            @Html.EditorFor(model => model.PasswordCurent, new { htmlAttributes = new { @class = "form-control", @id = "password", @placeholder = "Enter your curent password" } })
+                                                            @Html.ValidationMessageFor(model => model.PasswordCurent, "", new { @class = "danger" })
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="form-group">
+
+                                                       <div class="col-xs-6">
+                                                            <label for="password">New password</label>
+
+                                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type = "password", @class = "form-control", @id = "password", @placeholder = "Enter your new password" } })
+                                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "danger" })
+                                                       </div>
+                                                  </div>
+                                                  <div class="form-group">
+
+                                                       <div class="col-xs-6">
+                                                            <label for="password2">Repeat new password</label>
+
+                                                            @Html.EditorFor(model => model.RePassword, new { htmlAttributes = new { @type = "password", @class = "form-control", @id = "password", @placeholder = "Repeat your new password" } })
+                                                            @Html.ValidationMessageFor(model => model.RePassword, "", new { @class = "danger" })
+                                                       </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                       <div class="col-xs-12">
+                                                            <br>
+                                                            <button class="btn btn-lg btn-success pull-right security2" type="submit" name="button" value="securitypass"><i class="glyphicon"></i>Save</button>
+                                                            <!--<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>-->
+                                                       </div>
+                                                       <label class="pull-right" style="font-size:15px; color:red;">@ViewBag.Notification2</label>
+                                                  </div>
+                                             </div>
+                                        </form>
+                                   </div>
+
+                              </div><!--/tab-pane-->
+                         </div><!--/tab-content-->
+
+                    </div><!--/col-9-->
+               </div><!--/row-->
+          </div>
+
+          <script src="~/Content/js/app1.js"></script>
+          <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+          <script src="~/Scripts/bootstrap.min.js"></script>
+     </body>
+
+}
+
+

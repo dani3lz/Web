@@ -88,7 +88,11 @@ namespace eUseControl.Web.Controllers
                {
                     {"username", reg.Username },
                     {"email", reg.Email },
-                    {"password", reg.Password }
+                    {"password", reg.Password },
+                    {"first", "" },
+                    {"last", "" },
+                    {"adress", "" },
+                    {"phone", "" },
                };
 
                users.InsertOneAsync(document);
