@@ -13,18 +13,7 @@ $('.menuright #menupage').on('click', function(){
 	$togglefunction();
 });
 // Menubar fix (scroll)
-$(window).on('scroll', function(){
-  $('#header').toggleClass('scrollfix', scrollY > 82.85 );
-});
-
-	$(".nav-tabs li").on('click', function () {
-	$(".nav-tabs li").addClass('active');
-});
-
-	$(".nav-tabs li").on('click', function () {
-	$(".nav-tabs li").addClass('active');
-
-});
-	$(".nav-tabs li").on('click', function () {
-	$(".nav-tabs li").addClass('active');
+//$(window).on('scroll', function(){
+//  $('#header').toggleClass('scrollfix', scrollY > 82.85 );
+//});
 });

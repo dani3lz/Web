@@ -15,21 +15,43 @@
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
           <link href="~/Content/Profile/bootstrap.min.css" rel="stylesheet" />
-          <link rel="stylesheet" type="text/css" href="~/Content/css/style-profile.css">
+          <link rel="stylesheet" type="text/css" href="~/Content/css/style-profile.css">  
 
      </head>
      <body>
           <div class="wrapper">
+               <div id="header">
+                    <div class="logo">BOOKShop</div>
+                    <div class="menubar"><a href="/Home/Index">Home</a></div>
+                    <div class="menubar"><a href="/Market/Books">Market</a></div>
+                    @if (Session["Username"] == null)
+                    {
+                         <div class="menubar"><a href="/Auth/Login">Login</a></div>
+                    }
+                    else
+                    {
+                         <div class="dropdown">
+                              <div class="menubar user">@Session["Username"].ToString()</div>
+                              <div class="dropdown-content">
+                                   <a href="/User/Profile">Profile</a>
+                                   <a href="/Auth/Logout">Logout</a>
+                              </div>
+                         </div>
+                    }
+               </div>
+
+
                <div class="container bootstrap snippet">
                     <div class="row">
-                         <div class="col-sm-10"><h1>
-                         @if (Session["Username"] != null)
-                         {
-                              @Session["Username"].ToString()
-                         }
-                         </h1></div>
+                         <div class="col-sm-10">
+                              <h1>
+                                   @if (Session["Username"] != null)
+                                   {
+                                        @Session["Username"].ToString()
+                                   }
+                              </h1>
+                         </div>
                          <div class="col-sm-2"></div>
                     </div>
                     <div class="row">
@@ -181,17 +203,18 @@
                                                        </div>
                                                        <label class="pull-right" style="font-size:15px; color:red;">@ViewBag.Notification2</label>
                                                   </div>
+                                                 
                                              </div>
+                                             
                                         </form>
-                                   </div>
 
-                              </div><!--/tab-pane-->
-                         </div><!--/tab-content-->
+                                   </div><!--/tab-pane-->
+                              </div><!--/tab-content-->
 
-                    </div><!--/col-9-->
-               </div><!--/row-->
-          </div>
-
+                         </div><!--/col-9-->
+                    </div><!--/row-->
+               </div><!--/container-->
+          </div><!--/wrapper-->
           <script src="~/Content/js/app1.js"></script>
           <script src="~/Scripts/jquery-3.5.1.min.js"></script>
           <script src="~/Scripts/bootstrap.min.js"></script>

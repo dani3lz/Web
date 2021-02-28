@@ -28,7 +28,13 @@
                }
                else
                {
-                    <div class="menubar user">@ViewBag.Notification</div>
+                    <div class="dropdown">
+                         <div class="menubar user">@Session["Username"].ToString()</div>
+                              <div class="dropdown-content">
+                                   <a href="/User/Profile">Profile</a>
+                                   <a href="/Auth/Logout">Logout</a>
+                              </div>
+                         </div>
                }
           </div>
 

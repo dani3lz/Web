@@ -12,7 +12,6 @@ namespace eUseControl.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            ViewBag.Notification = Session["Username"];
             return View();
         }
     }

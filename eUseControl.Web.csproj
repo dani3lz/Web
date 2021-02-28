@@ -452,6 +452,7 @@
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\Auth\Logout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

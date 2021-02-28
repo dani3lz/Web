@@ -19,7 +19,14 @@ namespace eUseControl.Web.Controllers
                {
                     return View();
                }
-               return RedirectToAction("Books", "Market");
+               if (Request.UrlReferrer != null)
+               {
+                    return Redirect(Request.UrlReferrer.PathAndQuery);
+               }
+               else
+               {
+                    return RedirectToAction("Index", "Home");
+               }
           }
 
           [HttpPost]

@@ -324,9 +324,12 @@ iframe {
 [ Restyle Checkbox ]*/
 
 .contact100-form-checkbox {
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-bottom: 35px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 35px;
+	display: flex;
+	justify-content: right;
+	align-items: center;
 }
 
 .input-checkbox100 {
@@ -338,42 +341,8 @@ iframe {
   font-size: 13px;
   color: #fff;
   line-height: 1.2;
-
-  display: block;
-  position: relative;
-  padding-left: 26px;
-  cursor: pointer;
-}
-
-.label-checkbox100::before {
-  content: "\f26b";
-  font-family: Material-Design-Iconic-Font;
-  font-size: 13px;
-  color: transparent;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
-  background: #fff;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.input-checkbox100:checked + .label-checkbox100::before {
-  color: #555555;
+  width: 30%;
+  padding-left: 10px;
 }
 
 

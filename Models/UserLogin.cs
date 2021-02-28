@@ -22,5 +22,8 @@ namespace eUseControl.Web.Models
           [Required(ErrorMessage = "Introduceti parola!")]
           [DataType(DataType.Password)]
           public string Password { get; set; }
+
+          [Display(Name ="Remember me")]
+          public bool Remember { get; set; }
      }
 }
