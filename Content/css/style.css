@@ -84,9 +84,16 @@ body {
                transition: 0.5s;
           }
 
-     #header.scrollfix {
-          
-     }
+          #header .menubar a:focus {
+               outline: 0;
+               -moz-outline-style: none;
+          }
+
+          #header .menubar a:active {
+               outline: 0;
+               -moz-outline-style: none;
+          }
+     
 
      #header .buttonm {
           position: relative;
@@ -253,6 +260,7 @@ body {
      color: red;
 }
 
+/* Header user */
 #header .user {
      color: #fff;
      text-decoration: none;

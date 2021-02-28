@@ -44,27 +44,23 @@ namespace eUseControl.Web.Controllers
 
                     if (button == "general")
                     {
-                         var result = users.Find(new BsonDocument { { "username", changes.Username } }).ToList();
-                         foreach (var r in result)
+                         if (changes.First == null || changes.Last == null || changes.Telefonul == null || changes.Adresa == null)
                          {
-                              if (changes.First == null || changes.Last == null || changes.Telefonul == null || changes.Adresa == null)
-                              {
 
-                              }
-                              else
-                              {
-                                   var update1 = Builders<BsonDocument>.Update.Set("first", changes.First);
-                                   var update2 = Builders<BsonDocument>.Update.Set("last", changes.Last);
-                                   var update3 = Builders<BsonDocument>.Update.Set("phone", changes.Telefonul);
-                                   var update4 = Builders<BsonDocument>.Update.Set("adress", changes.Adresa);
-
-                                   users.UpdateOne(filter, update1);
-                                   users.UpdateOne(filter, update2);
-                                   users.UpdateOne(filter, update3);
-                                   users.UpdateOne(filter, update4);
-                              }
                          }
+                         else
+                         {
+                              var update1 = Builders<BsonDocument>.Update.Set("first", changes.First);
+                              var update2 = Builders<BsonDocument>.Update.Set("last", changes.Last);
+                              var update3 = Builders<BsonDocument>.Update.Set("phone", changes.Telefonul);
+                              var update4 = Builders<BsonDocument>.Update.Set("adress", changes.Adresa);
 
+                              users.UpdateOne(filter, update1);
+                              users.UpdateOne(filter, update2);
+                              users.UpdateOne(filter, update3);
+                              users.UpdateOne(filter, update4);
+                              ViewBag.GeneralSucces = "Modificarile au fost salvate!";
+                         }
                          return View();
                     }
 
@@ -91,11 +87,7 @@ namespace eUseControl.Web.Controllers
                                    }
                               }
                          }
-                         
-
                          return View();
-
-
                     }
 
                     if (button == "securitypass")
@@ -123,7 +115,6 @@ namespace eUseControl.Web.Controllers
                          }
 
                          return View();
-
                     }
                }
                return View("Index", "Home");
