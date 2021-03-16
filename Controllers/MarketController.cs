@@ -1,11 +1,12 @@
-﻿using eUseControl.Web.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using BusinessLogic;
+using BusinessObject;
 
 namespace eUseControl.Web.Controllers
 {
@@ -14,15 +15,7 @@ namespace eUseControl.Web.Controllers
           // GET: Market
           public ActionResult Books()
           {
-
-               var client = new MongoClient("mongodb://localhost:27017");
-               var db = client.GetDatabase("BOOKShop");
-               var books = db.GetCollection<BsonDocument>("Books");
-
-               var category = db.GetCollection<BsonDocument>("Category");
-               var result = category.Find(new BsonDocument()).ToList();
-
-
+               var result = new UserBL().Connect("Category");
                UserData u = new UserData();
                u.Category = new List<string> { } ;
                foreach (var r in result)

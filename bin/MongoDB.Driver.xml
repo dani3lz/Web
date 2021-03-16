@@ -1646,6 +1646,11 @@
             Gets or sets when documents expire (used with TTL indexes).
             </summary>
         </member>
+        <member name="P:MongoDB.Driver.CreateIndexOptions.Hidden">
+            <summary>
+            Gets or sets a value indicating whether the index is hidden.
+            </summary>
+        </member>
         <member name="P:MongoDB.Driver.CreateIndexOptions.LanguageOverride">
             <summary>
             Gets or sets the language override.
@@ -1958,6 +1963,11 @@
             Gets or sets the maximum time.
             </summary>
             <value>The maximum time.</value>
+        </member>
+        <member name="P:MongoDB.Driver.Encryption.AutoEncryptionLibMongoCryptController.InternalClient">
+            <summary>
+            this property is used by DisposableMongoClient.Dispose to unregister the internal cluster.
+            </summary>
         </member>
         <member name="T:MongoDB.Driver.Encryption.AutoEncryptionOptions">
             <summary>
@@ -14347,6 +14357,11 @@
             Gets or sets the connection mode.
             </summary>
         </member>
+        <member name="P:MongoDB.Driver.MongoClientSettings.ConnectionModeSwitch">
+            <summary>
+            Gets the connection mode switch.
+            </summary>
+        </member>
         <member name="P:MongoDB.Driver.MongoClientSettings.ConnectTimeout">
             <summary>
             Gets or sets the connect timeout.
@@ -14360,6 +14375,11 @@
         <member name="P:MongoDB.Driver.MongoClientSettings.Credentials">
             <summary>
             Gets or sets the credentials.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Driver.MongoClientSettings.DirectConnection">
+            <summary>
+            Gets or sets the direct connection.
             </summary>
         </member>
         <member name="P:MongoDB.Driver.MongoClientSettings.GuidRepresentation">
@@ -16141,6 +16161,11 @@
             Gets the connection mode.
             </summary>
         </member>
+        <member name="P:MongoDB.Driver.MongoUrl.ConnectionModeSwitch">
+            <summary>
+            Gets the connection mode switch.
+            </summary>
+        </member>
         <member name="P:MongoDB.Driver.MongoUrl.ConnectTimeout">
             <summary>
             Gets the connect timeout.
@@ -16149,6 +16174,11 @@
         <member name="P:MongoDB.Driver.MongoUrl.DatabaseName">
             <summary>
             Gets the optional database name.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Driver.MongoUrl.DirectConnection">
+            <summary>
+            Gets the direct connection.
             </summary>
         </member>
         <member name="P:MongoDB.Driver.MongoUrl.FSync">
@@ -16484,6 +16514,11 @@
             Gets or sets the connection mode.
             </summary>
         </member>
+        <member name="P:MongoDB.Driver.MongoUrlBuilder.ConnectionModeSwitch">
+            <summary>
+            Gets the connection mode switch.
+            </summary>
+        </member>
         <member name="P:MongoDB.Driver.MongoUrlBuilder.ConnectTimeout">
             <summary>
             Gets or sets the connect timeout.
@@ -16492,6 +16527,11 @@
         <member name="P:MongoDB.Driver.MongoUrlBuilder.DatabaseName">
             <summary>
             Gets or sets the optional database name.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Driver.MongoUrlBuilder.DirectConnection">
+            <summary>
+            Gets or sets the direct connection.
             </summary>
         </member>
         <member name="P:MongoDB.Driver.MongoUrlBuilder.FSync">
@@ -20707,7 +20747,7 @@
             Creates a pop first operator.
             </summary>
             <param name="field">The field.</param>
-            <returns>A pop first operator.</returns>
+            <returns>A pop last operator.</returns>
         </member>
         <member name="M:MongoDB.Driver.UpdateDefinitionBuilder`1.Pull``1(MongoDB.Driver.FieldDefinition{`0},``0)">
             <summary>
@@ -21129,6 +21169,11 @@
         <member name="P:MongoDB.Driver.WriteConcernError.Details">
             <summary>
             Gets the error information.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Driver.WriteConcernError.ErrorLabels">
+            <summary>
+            Gets the error labels.
             </summary>
         </member>
         <member name="P:MongoDB.Driver.WriteConcernError.Message">

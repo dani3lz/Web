@@ -8,7 +8,6 @@ namespace eUseControl.Web.Controllers
 {
     public class HomeController : Controller
     {
-          string username;
         // GET: Home
         public ActionResult Index()
         {

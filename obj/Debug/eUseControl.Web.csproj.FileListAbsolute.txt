@@ -73,3 +73,17 @@ D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\MongoDB.Bson.xml
 D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\MongoDB.Driver.xml
 D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\MongoDB.Driver.Core.xml
 D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Buffers.xml
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Memory.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Numerics.Vectors.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Text.Encoding.CodePages.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Memory.xml
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Numerics.Vectors.xml
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\System.Text.Encoding.CodePages.xml
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\BusinessLogic.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\BusinessObject.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\DataAccess.dll
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\BusinessLogic.pdb
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\BusinessObject.pdb
+D:\Files\.NET\eUseControl.Web\eUseControl.Web\bin\DataAccess.pdb
